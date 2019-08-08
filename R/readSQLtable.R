@@ -37,7 +37,7 @@ readSQLtable <- function(tableName, token, query = NULL, hostName = NULL,
                    pwd =  token,
                    httppath = httpPath),
     error = function(err){
-      message("Creating a connection to the external database failed.");
+      stop("Creating a connection to the external database failed.");
       return(NaN)
     }
   )
@@ -46,7 +46,7 @@ readSQLtable <- function(tableName, token, query = NULL, hostName = NULL,
     DBI::dbSendQuery(conn = con, statement = query),
     error = function(err){
       DBI::dbDisconnect(con)
-      message("The SQL query used failed to evaluate.");
+      stop("The SQL query used failed to evaluate.");
       return(NaN)
     }
   )
@@ -54,7 +54,7 @@ readSQLtable <- function(tableName, token, query = NULL, hostName = NULL,
   resData <- tryCatch(
     DBI::dbFetch(result), 
     error = function(err){
-      message("Fetchig the records failed.");
+      stop("Fetchig the records failed.");
       return(NaN)
     },
     finally = DBI::dbDisconnect(con)
