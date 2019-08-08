@@ -19,7 +19,7 @@ readSQLtable <- function(tableName, token, query = NULL, hostName = NULL,
                          httpPath = NULL){
   
   if(is.null(query)){ 
-    query <- paste0( collapse = "", "SELECT * FROM", tableName)
+    query <- paste("SELECT * FROM ", tableName)
   }
   
   if(is.null(hostName)){
