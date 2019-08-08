@@ -56,12 +56,14 @@ readSQLtable <- function(tableName, token, query = NULL, hostName = NULL,
     error = function(err){
       stop("Fetchig the records failed.");
       return(NaN)
-    }#,
-    #finally = {  }
+    },
+    finally = {
+      DBI::dbClearResult(result);
+      DBI::dbDisconnect(con);
+    }
   ) 
   
-  DBI::dbClearResult(result)
-  DBI::dbDisconnect(con);
+
   
   return(resData)
   
