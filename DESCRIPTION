@@ -1,0 +1,25 @@
+Package: disutils
+Type: Package
+Title: Helpful functions from a healthcare perspective
+URL: https://github.com/codonlibrary/disutils
+BugReports: https://github.com/codonlibrary/disutils/issues
+Version: 0.0.1
+Date: 2019-08-08,
+Authors@R: c(person("Pantelis","Hadjipantelis", role=c("aut")),
+    person("Robin","Jhadi ", email="Robin.Jhadi@nhs.net", role=c("aut","cre")),
+    person("Natasha","Chetwynd", role="ctb"),
+    person("Murdo","Moyse", role="ctb"),
+    person("George", "Robertson", role="ctb"),
+    person("Richard", "Irvine", role="cph"),
+    person("Garry", "Childs", role="cph") )
+Maintainer: Pantelis Z. Hadjipantelis <pantelis.hadjipantelis1@nhs.net>
+Description: Provides implementation of various methods of data analysis that would
+    be potentially helpful to a healthcare orgainisation.
+License: BSD_3_clause + file LICENSE
+LazyData: false
+Imports:
+    MASS, odbc, DBI
+Suggests:
+    testthat
+NeedsCompilation: no
+RoxygenNote: 6.1.1
